@@ -1,0 +1,38 @@
+<div *ngIf="display$ | async as display">
+    <section [class.open]="display === 'open'"
+             (click)="close()">
+      <div (click)="$event.stopPropagation()">
+        <button class="close"
+                type="button" 
+                (click)="close()">X</button>
+        
+        <div class="content-country">
+            <h1>{{ infoCountry.name && infoCountry.name.common }}  
+                <img width="30" height="30"  
+                    class="img" alt="start-initial" 
+                    title="Add to favorite" src="../../../assets/star1.svg"
+                    (click)="Favorite('add')" 
+                    *ngIf="!infoCountry.favorite"/>
+
+                <img width="30" height="30" class="img" 
+                        alt="start-favorite" 
+                        src="../../../assets/star2.svg"
+                        title="Remove favorite" 
+                        (click)="Favorite('rm')"
+                        *ngIf="infoCountry.favorite"/>
+            </h1>
+            <div class="content-info">
+                <p><strong>Region:</strong> {{ infoCountry.region }}</p>
+                <p><strong>Population:</strong> {{ infoCountry.population }}</p>
+                <p><strong>Capital:</strong> {{ infoCountry?.capital }}</p>
+                <p><strong>Currency:</strong><span *ngFor="let currency of infoCountry.currencies"> {{  currency.name  }}</span></p>
+                <p><strong>Language:</strong> {{ infoCountry.languages && infoCountry.languages.join(', ')}}</p>
+                <p><strong>Border Countries:</strong> {{ infoCountry.borders ? infoCountry.borders && infoCountry.borders.join(', ') : 'Nothing' }}</p>
+                <p><strong>Flag:</strong></p>
+            </div>
+            <img src="{{ infoCountry.flags && infoCountry.flags[0] }}" alt="flag"/>
+        </div>
+        
+      </div>
+    </section>
+  </div>

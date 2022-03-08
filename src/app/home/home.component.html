@@ -1,0 +1,41 @@
+<div class="content">
+    <div class="content-child">
+        <div class="content-info">
+            <p class="title">
+                Find any <span>country</span><br>  
+                in the world.
+            </p>
+            <div class="content-search">
+                <input type="text" placeholder="Search country" class="input-search" 
+                    [(ngModel)]="textFilter"
+                    (keyup)="searching($event)">
+                <select class="categories" (change)="filterByCont($event)">
+                    <option value="Show All">Show All</option>
+                    <option value="Favorites">Favorites</option>
+                    <option *ngFor="let continent of continents" value="{{ continent.name }}">{{ continent.name }}</option>
+                </select>
+                <button class="btn-search" (click)="appFilter()">
+                    <img width="25" height="25" src="../../assets/icon-search.svg" />
+                </button>
+            </div>
+        </div>
+        <div class="content-image">
+            <img class="img" alt="img-home" src="../../assets/home.svg" />
+        </div>
+    </div>
+    <div class="content-continents">
+        <div class="info-continents" *ngFor="let continent of infoContinents">
+            <h2 class="title-continent">{{ continent.name }}</h2>
+            <div class="info-country" 
+                *ngFor="let country of continent.countries"
+                (click)="selectCountry(country)">
+                <img width="18" height="12" src="{{ country.flags[0] }}" />
+                <p class="text-country">{{ country.name.common }}</p>
+                <img width="25" height="12" class="img" alt="start-favorite" src="../../assets/star2.svg" *ngIf="country.favorite" />
+            </div>
+        </div>
+        <div class="info-result" *ngIf="infoContinents.length == 0">
+            <h1 class="no-result">No results found</h1>
+        </div>
+    </div>
+</div>

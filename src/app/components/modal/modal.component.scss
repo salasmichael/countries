@@ -1,0 +1,302 @@
+
+  .img{
+    cursor: pointer;
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  section {
+    visibility: hidden;
+    opacity: 0;
+    &.open {
+      visibility: inherit;
+      opacity: 1;
+    }
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 41, 94, 0.7);
+    transition: opacity 250ms ease-in;
+  
+    > div {
+      position: fixed;
+      top: 20%;
+      left: 21%;
+      transform: translate(-50%, -50%);
+      width: 39%;
+      height: 506px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px 4px rgb(0 0 0 / 10%);
+
+      .content-country{
+        padding: 20px;
+        >h1{
+          font-family: Roboto;
+          font-style: normal;
+          font-size: 40px;
+          line-height: 47px;
+          color: #09295E;
+          margin: 0;
+          margin-bottom: 15px;
+        }
+        >img{
+          width: 181px;
+          height: 120px;
+          margin-top: 10px;
+        }
+        .content-info p{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 23px;
+          color: #4F4F4F;
+          margin: 0;
+          margin-bottom: 5px;
+          
+        }
+      }
+    }
+  
+    button.close {
+      background: none;
+      color: inherit;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 16px;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  section {
+    visibility: hidden;
+    opacity: 0;
+    &.open {
+      visibility: inherit;
+      opacity: 1;
+    }
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 41, 94, 0.7);
+    transition: opacity 250ms ease-in;
+  
+    > div {
+      position: fixed;
+      top: 35%;
+      left: 21%;
+      transform: translate(-50%, -50%);
+      width: 39%;
+      height: 506px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px 4px rgb(0 0 0 / 10%);
+
+      .content-country{
+        padding: 20px;
+        >h1{
+          font-family: Roboto;
+          font-style: normal;
+          font-size: 40px;
+          line-height: 47px;
+          color: #09295E;
+          margin: 0;
+          margin-bottom: 15px;
+        }
+        >img{
+          width: 181px;
+          height: 120px;
+          margin-top: 10px;
+        }
+        .content-info p{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 23px;
+          color: #4F4F4F;
+          margin: 0;
+          margin-bottom: 5px;
+          
+        }
+      }
+    }
+  
+    button.close {
+      background: none;
+      color: inherit;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 16px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  section {
+    visibility: hidden;
+    opacity: 0;
+    &.open {
+      visibility: inherit;
+      opacity: 1;
+    }
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 41, 94, 0.7);
+    transition: opacity 250ms ease-in;
+  
+    > div {
+      position: fixed;
+      top: 35%;
+      left: 21%;
+      transform: translate(-50%, -50%);
+      width: 39%;
+      height: 506px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px 4px rgb(0 0 0 / 10%);
+
+      .content-country{
+        padding: 20px;
+        >h1{
+          font-family: Roboto;
+          font-style: normal;
+          font-size: 40px;
+          line-height: 47px;
+          color: #09295E;
+          margin: 0;
+          margin-bottom: 15px;
+        }
+        >img{
+          width: 181px;
+          height: 120px;
+          margin-top: 10px;
+        }
+        .content-info p{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 23px;
+          color: #4F4F4F;
+          margin: 0;
+          margin-bottom: 5px;
+          
+        }
+      }
+    }
+  
+    button.close {
+      background: none;
+      color: inherit;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 16px;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  section {
+    visibility: hidden;
+    opacity: 0;
+    &.open {
+      visibility: inherit;
+      opacity: 1;
+    }
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 41, 94, 0.7);
+    transition: opacity 250ms ease-in;
+  
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 886px;
+      height: 506px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+
+      .content-country{
+        padding: 50px;
+        >h1{
+          font-family: Roboto;
+          font-style: normal;
+          font-size: 40px;
+          line-height: 47px;
+          color: #09295E;
+          margin: 0;
+          margin-bottom: 15px;
+        }
+        >img{
+          width: 181px;
+          height: 120px;
+          margin-top: 10px;
+        }
+        .content-info p{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 23px;
+          color: #4F4F4F;
+          margin: 0;
+          margin-bottom: 5px;
+          
+        }
+      }
+    }
+  
+    button.close {
+      background: none;
+      color: inherit;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 16px;
+    }
+  }
+}
+
