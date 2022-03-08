@@ -24,32 +24,37 @@ export class HomeComponent implements OnInit {
   getAllcountries = ()=>{
     this._getCountriesService.getAllCountries()
       .subscribe((data:any)=>{
-        let tempContinent:any = [];
-        let tempCountries:any = [];
-        data.map((c:any)=>{
-            
-            if(!tempContinent.includes(c.region) &&  c.region != 'Antarctic' ){
-                tempContinent.push(c.region)
-                this.continents.push({name:c.region})
-              }
-        })
-        
-        this.continents.sort((a:any, b:any) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
-        let favorites = JSON.parse(localStorage.getItem('favorites')!)
+        if(data){
+          let tempContinent:any = [];
+          let tempCountries:any = [];
+          data.map((c:any)=>{
+            if(c.region){
+                  if(!tempContinent.includes(c.region) &&  c.region != 'Antarctic' ){
+                    tempContinent.push(c.region)
+                    this.continents.push({name:c.region})
+                  }
+                }
+          })
           
-          this.continents.map((p:any)=>{
-            tempCountries = data.filter((c:any) => c.region == p.name )
-            
-            tempCountries = tempCountries.filter((f:any)=> favorites.includes(f.name.common) ? f['favorite'] = true : f )
-            
-            tempCountries.sort((a:any, b:any) => a.name.common.toLowerCase().localeCompare(b.name.common.toLowerCase()))
-            
-            this.infoContinents.push({
-              name: p.name,
-              countries: tempCountries
-            })
-        })
-        this.infoContinentsTemp = this.infoContinents;
+          this.continents.sort((a:any, b:any) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+          let favorites = JSON.parse(localStorage.getItem('favorites')!)
+
+            this.continents.map((p:any)=>{
+              tempCountries = data.filter((c:any) => c.region == p.name )
+              if(favorites){
+                tempCountries = tempCountries.filter((f:any)=> favorites.includes(f.name.common) ? f['favorite'] = true : f )
+              }
+              
+              tempCountries.sort((a:any, b:any) => a.name.common.toLowerCase().localeCompare(b.name.common.toLowerCase()))
+              
+              this.infoContinents.push({
+                name: p.name,
+                countries: tempCountries
+              })
+          })
+          this.infoContinentsTemp = this.infoContinents;
+
+        }
     })
   }
 
